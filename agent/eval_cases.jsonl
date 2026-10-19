@@ -1,0 +1,28 @@
+{"state": "Customer support message:\nI was charged twice for my subscription this month.", "expected": {"category": "billing", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nMy app keeps crashing every time I try to open it.", "expected": {"category": "technical", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nI cannot log into my account. It says my password is wrong.", "expected": {"category": "account-access", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nHow do I export my data to a CSV file?", "expected": {"category": "general", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nThis is absolutely unacceptable! I need a manager NOW!", "expected": {"category": "escalation", "urgent": "true"}, "split": "test"}
+{"state": "Customer support message:\nMy invoice shows $99 but I should be on the $49 plan.", "expected": {"category": "billing", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nThe dashboard is loading extremely slowly, it's unusable.", "expected": {"category": "technical", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nI set up 2FA but now I can't receive the code after changing my phone.", "expected": {"category": "account-access", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nCan you explain the difference between the Pro and Business plans?", "expected": {"category": "general", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nI am furious. Your service has been down for 3 hours and I'm losing business!", "expected": {"category": "escalation", "urgent": "true"}, "split": "test"}
+{"state": "Customer support message:\nI want to cancel my subscription and get a refund for the remaining months.", "expected": {"category": "billing", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nThe mobile app is not syncing with the web version.", "expected": {"category": "technical", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nMy account has been locked after too many failed login attempts.", "expected": {"category": "account-access", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nI would like to request a new feature for bulk data import.", "expected": {"category": "general", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nFix this immediately or I am leaving and taking my team with me!", "expected": {"category": "escalation", "urgent": "true"}, "split": "test"}
+{"state": "Customer support message:\nI need a receipt for my last payment for tax purposes.", "expected": {"category": "billing", "urgent": "false"}, "split": "test"}
+{"state": "Customer support message:\nI was billed but I need this resolved urgently before my accounting deadline today!", "expected": {"category": "billing", "urgent": "true"}, "split": "tune"}
+{"state": "Customer support message:\nAPI integration is returning 500 errors and breaking our production system.", "expected": {"category": "technical", "urgent": "true"}, "split": "tune"}
+{"state": "Customer support message:\nI cannot access my account and I have an important presentation in 1 hour.", "expected": {"category": "account-access", "urgent": "true"}, "split": "tune"}
+{"state": "Customer support message:\nWhat is your data retention policy?", "expected": {"category": "general", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nI've been waiting for 3 days and nobody has helped me. This is terrible service.", "expected": {"category": "escalation", "urgent": "true"}, "split": "tune"}
+{"state": "Customer support message:\nCan I upgrade my plan mid-month and will I be charged pro-rata?", "expected": {"category": "billing", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nNotifications are not being delivered to my email.", "expected": {"category": "technical", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nI forgot my password and the reset email is not arriving.", "expected": {"category": "account-access", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nDo you offer discounts for non-profit organisations?", "expected": {"category": "general", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nI need help, something is wrong but I am not sure where to start.", "expected": {"category": "general", "urgent": "false"}, "split": "tune"}
+{"state": "Customer support message:\nThis is completely broken and I want my money back immediately, I am done.", "expected": {"category": "escalation", "urgent": "true"}, "split": "tune"}
+{"state": "Customer support message:\nI think there might be an issue with my subscription but I'm not entirely sure.", "expected": {"category": "billing", "urgent": "false"}, "split": "tune"}

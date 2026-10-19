@@ -1,0 +1,22 @@
+[
+  {"id": "TKT-1001", "category": "billing", "summary": "Double charged for subscription", "status": "resolved"},
+  {"id": "TKT-1002", "category": "technical", "summary": "App crashes on startup", "status": "resolved"},
+  {"id": "TKT-1003", "category": "account-access", "summary": "Cannot reset password", "status": "resolved"},
+  {"id": "TKT-1004", "category": "general", "summary": "How do I export my data?", "status": "resolved"},
+  {"id": "TKT-1005", "category": "escalation", "summary": "Threatening to cancel, wants manager", "status": "resolved"},
+  {"id": "TKT-1006", "category": "billing", "summary": "Invoice shows wrong amount", "status": "resolved"},
+  {"id": "TKT-1007", "category": "technical", "summary": "Integration API returning 500 errors", "status": "resolved"},
+  {"id": "TKT-1008", "category": "account-access", "summary": "2FA not working after phone change", "status": "resolved"},
+  {"id": "TKT-1009", "category": "general", "summary": "What are the plan limits?", "status": "resolved"},
+  {"id": "TKT-1010", "category": "escalation", "summary": "Service down, furious customer", "status": "resolved"},
+  {"id": "TKT-1011", "category": "billing", "summary": "Want to downgrade subscription", "status": "resolved"},
+  {"id": "TKT-1012", "category": "technical", "summary": "Data not syncing across devices", "status": "resolved"},
+  {"id": "TKT-1013", "category": "account-access", "summary": "Account locked after failed logins", "status": "resolved"},
+  {"id": "TKT-1014", "category": "general", "summary": "Requesting a feature addition", "status": "resolved"},
+  {"id": "TKT-1015", "category": "technical", "summary": "Slow dashboard loading times", "status": "resolved"},
+  {"id": "TKT-1016", "category": "billing", "summary": "Need a refund for unused months", "status": "resolved"},
+  {"id": "TKT-1017", "category": "account-access", "summary": "Can't log in from new country", "status": "resolved"},
+  {"id": "TKT-1018", "category": "general", "summary": "Looking for onboarding documentation", "status": "resolved"},
+  {"id": "TKT-1019", "category": "escalation", "summary": "This is unacceptable, fix it now", "status": "resolved"},
+  {"id": "TKT-1020", "category": "technical", "summary": "Notifications not being sent", "status": "resolved"}
+]

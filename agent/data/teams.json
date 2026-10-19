@@ -1,0 +1,27 @@
+{
+  "billing": {
+    "team": "Billing & Payments",
+    "eta": "within 4 hours",
+    "description": "Handles invoices, charges, payments, subscriptions, and refunds"
+  },
+  "technical": {
+    "team": "Technical Support",
+    "eta": "within 2 hours",
+    "description": "Handles bugs, crashes, errors, app issues, and performance problems"
+  },
+  "account-access": {
+    "team": "Account Security",
+    "eta": "within 1 hour",
+    "description": "Handles login issues, password resets, 2FA problems, and locked accounts"
+  },
+  "general": {
+    "team": "Customer Success",
+    "eta": "within 24 hours",
+    "description": "Handles product questions, how-to requests, feedback, and general inquiries"
+  },
+  "escalation": {
+    "team": "Senior Support",
+    "eta": "within 30 minutes",
+    "description": "Handles urgent escalations, frustrated customers, and high-priority issues"
+  }
+}

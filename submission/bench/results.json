@@ -1,0 +1,540 @@
+{
+ "decider_model": "strands-decider-2b-hobson-v19",
+ "rows": [
+  {
+   "i": 0,
+   "expected": {
+    "category": "billing",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "billing",
+     "confidence": 0.4524
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8653
+    }
+   },
+   "decider_ms": 3125.7252000214066,
+   "decider_server_ms": 2512.5,
+   "llm": {
+    "category": {
+     "label": "billing",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 17967.634600005113,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 1,
+   "expected": {
+    "category": "technical",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "technical",
+     "confidence": 0.8873
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.832
+    }
+   },
+   "decider_ms": 3408.143399981782,
+   "decider_server_ms": 2775.0,
+   "llm": {
+    "category": {
+     "label": "technical",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16495.885199983604,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 2,
+   "expected": {
+    "category": "account-access",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "account-access",
+     "confidence": 0.8125
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8822
+    }
+   },
+   "decider_ms": 3083.5249999945518,
+   "decider_server_ms": 2515.7,
+   "llm": {
+    "category": {
+     "label": "account-access",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16548.90389999491,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 3,
+   "expected": {
+    "category": "general",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "general",
+     "confidence": 0.8325
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.9077
+    }
+   },
+   "decider_ms": 3402.8152999817394,
+   "decider_server_ms": 2793.5,
+   "llm": {
+    "category": {
+     "label": "general",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16286.536600004183,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 4,
+   "expected": {
+    "category": "escalation",
+    "urgent": "true"
+   },
+   "decider": {
+    "category": {
+     "label": "escalation",
+     "confidence": 0.8776
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 0.8837
+    }
+   },
+   "decider_ms": 3333.0283999966923,
+   "decider_server_ms": 2745.5,
+   "llm": {
+    "category": {
+     "label": "escalation",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16495.01290000626,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 5,
+   "expected": {
+    "category": "billing",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "billing",
+     "confidence": 0.4899
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8825
+    }
+   },
+   "decider_ms": 3102.7616999926977,
+   "decider_server_ms": 2471.9,
+   "llm": {
+    "category": {
+     "label": "billing",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16306.362200004514,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 6,
+   "expected": {
+    "category": "technical",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "technical",
+     "confidence": 0.8684
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.6452
+    }
+   },
+   "decider_ms": 3145.7634000107646,
+   "decider_server_ms": 2520.1,
+   "llm": {
+    "category": {
+     "label": "technical",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 0.9
+    }
+   },
+   "llm_ms": 16469.800699996995,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 7,
+   "expected": {
+    "category": "account-access",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "account-access",
+     "confidence": 0.5531
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.9031
+    }
+   },
+   "decider_ms": 3443.7078000046313,
+   "decider_server_ms": 2830.6,
+   "llm": {
+    "category": {
+     "label": "account-access",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16551.95360002108,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 8,
+   "expected": {
+    "category": "general",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "general",
+     "confidence": 0.7907
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.9189
+    }
+   },
+   "decider_ms": 3137.5564000045415,
+   "decider_server_ms": 2472.2,
+   "llm": {
+    "category": {
+     "label": "general",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16489.289300021483,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 9,
+   "expected": {
+    "category": "escalation",
+    "urgent": "true"
+   },
+   "decider": {
+    "category": {
+     "label": "escalation",
+     "confidence": 0.6051
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 0.8426
+    }
+   },
+   "decider_ms": 3478.4229999931995,
+   "decider_server_ms": 2854.3,
+   "llm": {
+    "category": {
+     "label": "escalation",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16560.621900018305,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 10,
+   "expected": {
+    "category": "billing",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "billing",
+     "confidence": 0.395
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8929
+    }
+   },
+   "decider_ms": 3019.262899993919,
+   "decider_server_ms": 2461.2,
+   "llm": {
+    "category": {
+     "label": "billing",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16458.708100020885,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 11,
+   "expected": {
+    "category": "technical",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "technical",
+     "confidence": 0.8007
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8929
+    }
+   },
+   "decider_ms": 3459.3750000058208,
+   "decider_server_ms": 2851.2,
+   "llm": {
+    "category": {
+     "label": "technical",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16320.038800011389,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 12,
+   "expected": {
+    "category": "account-access",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "account-access",
+     "confidence": 0.9495
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8773
+    }
+   },
+   "decider_ms": 3403.8436000118963,
+   "decider_server_ms": 2831.3,
+   "llm": {
+    "category": {
+     "label": "account-access",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16489.70490001375,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 13,
+   "expected": {
+    "category": "general",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "general",
+     "confidence": 0.8428
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.9124
+    }
+   },
+   "decider_ms": 3141.676600003848,
+   "decider_server_ms": 2547.8,
+   "llm": {
+    "category": {
+     "label": "general",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16323.633699998027,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 14,
+   "expected": {
+    "category": "escalation",
+    "urgent": "true"
+   },
+   "decider": {
+    "category": {
+     "label": "escalation",
+     "confidence": 0.6953
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 0.8834
+    }
+   },
+   "decider_ms": 3336.881600000197,
+   "decider_server_ms": 2767.7,
+   "llm": {
+    "category": {
+     "label": "escalation",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "yes",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16486.35560000548,
+   "llm_cost": 0.0
+  },
+  {
+   "i": 15,
+   "expected": {
+    "category": "billing",
+    "urgent": "false"
+   },
+   "decider": {
+    "category": {
+     "label": "billing",
+     "confidence": 0.6432
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 0.8909
+    }
+   },
+   "decider_ms": 3186.1430999997538,
+   "decider_server_ms": 2506.2,
+   "llm": {
+    "category": {
+     "label": "billing",
+     "confidence": 1.0
+    },
+    "urgent": {
+     "label": "no",
+     "confidence": 1.0
+    }
+   },
+   "llm_ms": 16477.34290000517,
+   "llm_cost": 0.0
+  }
+ ],
+ "summary": {
+  "decider": {
+   "accuracy": 0.5,
+   "decisions": 32,
+   "per_question": {
+    "category": 1.0,
+    "urgent": 0.0
+   },
+   "latency_p50_ms": 3333.0,
+   "latency_p95_ms": 3459.4,
+   "usd_per_1k_decisions": 0.035,
+   "confident_share": 0.75,
+   "accuracy_when_confident": 0.375,
+   "sent_to_human_at_threshold": 8
+  },
+  "llm": {
+   "accuracy": 0.5,
+   "decisions": 32,
+   "per_question": {
+    "category": 1.0,
+    "urgent": 0.0
+   },
+   "latency_p50_ms": 16489.3,
+   "latency_p95_ms": 16560.6,
+   "usd_per_1k_decisions": 0.0,
+   "confident_share": 1.0,
+   "accuracy_when_confident": 0.5,
+   "sent_to_human_at_threshold": 0
+  },
+  "speedup_p50": 4.95
+ },
+ "threshold": 0.7,
+ "llm_model": "qwen3.5-4b",
+ "llm_provider": "ugmdu",
+ "llm_where": "AWS User Group Madurai cloud (qwen3.5-4b)",
+ "decider_url": "https://da25tnxy06gjk.cloudfront.net",
+ "decider_mode": "ugmdu",
+ "ran_at": 1792416640.0072744,
+ "split": "test"
+}

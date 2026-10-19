@@ -1,0 +1,5 @@
+# AgentCore features for SupportRoute
+# Memory and Gateway are not required for this agent's core use case.
+# Add Memory if you want to track recurring issues per customer across sessions.
+memory: false
+gateway: false
