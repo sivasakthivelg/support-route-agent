@@ -1,32 +1,37 @@
-title: "SupportRoute — AI-powered customer support routing"
-description: >
-  SupportRoute reads a customer's message and uses Strands Decider 2B to classify it
+title: "SupportRoute"
+pitch: "AI-powered customer support routing with Strands Decider"
+features:
+  - "Routes customer messages to the right team automatically"
+  - "Detects urgency and escalates critical cases immediately"
+  - "Low-confidence fallback asks for clarification instead of misrouting"
+  - "Every request gets a unique ticket reference and response-time estimate"
+
+intro: >
+  SupportRoute reads a customer message and uses Strands Decider to classify it
   into the right support category, then creates a ticket and tells the customer
-  which team will handle them.
+  which team will handle their request.
 
 turns:
-  - message: "I was charged twice for my subscription this month and I need this fixed."
-    narration: >
-      A billing question. The decider classifies it as billing with high confidence,
-      the agent creates a ticket and routes to the Billing & Payments team.
+  - say: "I was charged twice for my subscription this month."
+    narrate: >
+      A billing message. Watch how the decider classifies the category
+      and the agent creates a ticket for the Billing team.
 
-  - message: "The app crashes every single time I try to open the dashboard. It's been like this for two days."
-    narration: >
-      A technical issue. The decider picks technical support, creates a ticket,
-      and routes to the Technical Support team.
+  - say: "The app crashes every time I try to open the dashboard. It has been like this for two days."
+    narrate: >
+      A technical issue. The decider picks technical support and the agent
+      routes to the Technical Support team.
 
-  - message: "I can't log in — it says my account is locked after failed attempts."
-    narration: >
-      An account access problem. High confidence, routed to Account Security
-      with a one-hour response time.
+  - say: "This is absolutely unacceptable! I have been waiting for three days and no one has helped me. I want to speak to a manager immediately!"
+    narrate: >
+      An escalation. The decider detects both the escalation category and the
+      urgent flag. The agent creates a critical-priority ticket for Senior Support.
 
-  - message: "This is absolutely unacceptable! I've been waiting for 3 days and no one has helped me. I want to speak to a manager immediately!"
-    narration: >
-      An escalation. The decider detects both escalation category and urgent flag.
-      The agent flags it as critical priority and routes to Senior Support
-      with a 30-minute response time.
+  - say: "I am not really sure what is going on, something just feels off with my account or maybe the billing?"
+    narrate: >
+      A low-confidence case. The decider is uncertain, so the agent asks
+      the customer to clarify rather than misrouting.
 
-  - message: "I'm not really sure what's going on, something just feels off with my account or maybe the billing?"
-    narration: >
-      A low-confidence edge case. The decider is uncertain between billing and
-      account-access, so the agent asks the customer to clarify rather than misrouting.
+outro: >
+  SupportRoute routes every customer message to the right team quickly,
+  with calibrated confidence so it knows when to ask rather than guess.

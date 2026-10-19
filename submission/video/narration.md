@@ -1,15 +1,20 @@
-0. This store support agent talks through Amazon Bedrock. For this demo it is told to act without asking, and Strands Decider 2B checks every refund or cancellation before it runs.
+0. SupportRoute reads a customer message and uses Strands Decider to classify it into the right support category, then creates a ticket and tells the customer which team will handle their request.
 
-1. A store support agent that can refund and cancel orders, and cannot do it to the wrong order. It can look up, refund and cancel orders in chat; check every irreversible action with Strands Decider 2B before it runs; send unsure cases to a human instead of guessing; run on Amazon Bedrock AgentCore Runtime.
 
-2. The agent you are about to see is running on Amazon Bedrock AgentCore Runtime.
+1. AI-powered customer support routing with Strands Decider. What it does: Routes customer messages to the right team automatically. Detects urgency and escalates critical cases immediately. Low-confidence fallback asks for clarification instead of misrouting. Every request gets a unique ticket reference and response-time estimate.
 
-3. The customer wants a refund but never says which order. The decider scored args grounded 0.44, explicit request 0.79, premature 0.23, so the verdict was guide, in 3.1 seconds.
+2. A billing message. Watch how the decider classifies the category and the agent creates a ticket for the Billing team.
+ No decision was needed on this turn.
 
-4. Now the customer gives the order id and asks for the refund explicitly. The decider scored args grounded 0.61, explicit request 0.89, premature 0.13, so the verdict was proceed, in 3.9 seconds.
+3. A technical issue. The decider picks technical support and the agent routes to the Technical Support team.
+ No decision was needed on this turn.
 
-5. This one is a question, not a request to act. No decision was needed on this turn.
+4. An escalation. The decider detects both the escalation category and the urgent flag. The agent creates a critical-priority ticket for Senior Support.
+ No decision was needed on this turn.
 
-6. On 24 labelled decisions, with the decider running locally on this machine, Strands Decider was 79% accurate at a median of 295 milliseconds, against 96% and 1276 milliseconds for the Bedrock LLM asked the same questions.
+5. A low-confidence case. The decider is uncertain, so the agent asks the customer to clarify rather than misrouting.
+ No decision was needed on this turn.
 
-7. One forward pass per decision, typed answers with a confidence the code can branch on, and Amazon Bedrock for the conversation.
+6. On 32 labelled decisions, with the decider on the AWS User Group Madurai hosted API, Strands Decider was 50% accurate at a median of 3333 milliseconds, against 50% and 16489 milliseconds for a hosted open LLM asked the same questions.
+
+7. SupportRoute routes every customer message to the right team quickly, with calibrated confidence so it knows when to ask rather than guess.

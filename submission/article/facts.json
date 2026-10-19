@@ -1,0 +1,99 @@
+{
+ "pattern_tag": "#policy",
+ "agentcore_features": [],
+ "pattern_doc": "REUSABLE DECISION PATTERN: Customer Support Request Classification (#policy)\n\nWhat it does:\n    Reads a customer's free-text support message and classifies it into one of five\n    support categories (billing, technical, account-access, general, escalation), while\n    also detecting whether the customer is expressing urgency or frustration.\n\n    This pattern routes inbound support requests to the correct team without requiring\n    the customer to pick from a menu. It replaces fragile keyword matching with calibrated\n    probability from Strands Decider 2B.\n\nTyped questions and options:\n    category (choice):\n        \"billing\"        \u00e2\u20ac\u201d Invoice, charge, payment, subscription, or refund question\n        \"technical\"      \u00e2\u20ac\u201d Bug, crash, error, app not working, or performance issue\n        \"account-access\" \u00e2\u20ac\u201d Cannot log in, password reset, 2FA, or locked account\n        \"general\"        \u00e2\u20ac\u201d Product question, how-to, feedback, or general inquiry\n        \"escalation\"     \u00e2\u20ac\u201d Customer is angry, frustrated, threatening to leave, or\n                           demands urgent help\n\n    urgent (noul):\n        true  \u00e2\u20ac\u201d Uses words like urgent, immediately, furious, unacceptable, or demands\n                fast action\n        false \u00e2\u20ac\u201d Tone is neutral or politely asking for help\n\nThe wiring:\n    1. Build state_text from the customer message (just the message text is enough).\n    2. Call Decider.ask(state_text, QUESTIONS).\n    3. Check answers[\"category\"].confidence \u00e2\u20ac\u201d if below LOW_CONFIDENCE_THRESHOLD, ask\n       the customer to clarify rather than routing.\n    4. Check answers[\"urgent\"].yes for urgency flag.\n    5. Route to the team and create a ticket.\n\nHow to reuse:\n    Copy this file into your agent. Change the category options to match your business\n    (e.g. swap \"technical\" for \"shipping\" in an e-commerce context). Keep the urgency\n    noul \u00e2\u20ac\u201d it works across most support domains. Adjust LOW_CONFIDENCE_THRESHOLD to suit\n    your tolerance for misroutes vs. clarification requests.\n\n    Import:\n        from agent.decision import PATTERN_TAG, QUESTIONS, LOW_CONFIDENCE_THRESHOLD, SupportRouter",
+ "questions_code": "QUESTIONS = {\n    \"category\": Decider.choice(\n        \"Which support category best matches this customer message?\",\n        {\n            \"billing\":        \"Customer is asking about an invoice, charge, payment, subscription cost, plan upgrade or downgrade, refund, or any question about what they are being billed for \u00e2\u20ac\u201d even if they mention urgency or deadlines around the payment\",\n            \"technical\":      \"Customer reports a bug, crash, error message, feature not working, data not syncing, API failure, or performance problem \u00e2\u20ac\u201d even if the impact is severe or production-affecting\",\n            \"account-access\": \"Customer cannot log in, needs a password reset, has 2FA problems, or their account is locked or blocked\",\n            \"general\":        \"Customer has a general product question, how-to request, feature request, feedback, or the message is unclear and does not fit another category\",\n            \"escalation\":     \"Customer is expressing anger, frustration, threatening to cancel or leave, demanding a manager, or saying the service is unacceptable \u00e2\u20ac\u201d the primary signal is emotional tone, not the topic itself\",\n        },\n    ),\n    \"urgent\": Decider.noul(\n        \"Is the customer expressing urgency or strong frustration?\",\n        {\n            \"true\":  \"Customer uses words like urgent, immediately, now, furious, unacceptable, broken production, losing business, deadline today, or makes an explicit demand for immediate action\",\n            \"false\": \"Customer's tone is neutral, patient, or politely asking for help without pressure\",\n        },\n    ),\n}",
+ "agent_md": "# SupportRoute\n\n**SupportRoute** is an AI-powered customer support routing agent. It reads a customer's\nfree-text message, uses Strands Decider 2B to classify it into the correct support category,\ncreates a ticket, and tells the customer which team will handle their request \u00e2\u20ac\u201d along with a\nreference number and estimated response time.\n\n## Use case\n\nBusinesses receive support messages in plain language. Instead of making the customer pick a\ndepartment from a menu, SupportRoute reads the intent and routes automatically. This cuts\nmisroutes, speeds up first response, and reduces queue congestion in the wrong team's inbox.\n\n## Who uses it\n\nCustomer support operations teams at any business that handles inbound support messages:\nSaaS products, e-commerce, telecoms, banks, or any company with tiered support teams.\n\n## The decision (Strands Decider 2B \u00e2\u20ac\u201d #policy)\n\nOne `Decider.ask()` call with two typed questions:\n\n1. **category** (choice) \u00e2\u20ac\u201d billing, technical, account-access, general, or escalation\n2. **urgent** (noul) \u00e2\u20ac\u201d is the customer expressing urgency or strong frustration?\n\nThe decider reads the raw customer message as state. If confidence on `category` is below 0.65,\nthe agent asks the customer to clarify rather than misrouting.\n\n## Features\n\n- Natural-language routing \u00e2\u20ac\u201d no menus, no dropdowns\n- Five support categories with correct team names and ETAs\n- Urgency detection \u00e2\u20ac\u201d escalation and urgent tickets flagged immediately\n- Low-confidence fallback \u00e2\u20ac\u201d asks for clarification instead of guessing\n- Ticket creation \u00e2\u20ac\u201d every routed request gets a unique reference number\n- Transparent routing \u00e2\u20ac\u201d tells the customer exactly which team and when to expect a reply\n",
+ "llm_provider_local_runs": "ugmdu",
+ "agent_name": "SupportRoute",
+ "bench": {
+  "summary": {
+   "decider": {
+    "accuracy": 0.5,
+    "decisions": 32,
+    "per_question": {
+     "category": 1.0,
+     "urgent": 0.0
+    },
+    "latency_p50_ms": 3333.0,
+    "latency_p95_ms": 3459.4,
+    "usd_per_1k_decisions": 0.035,
+    "confident_share": 0.75,
+    "accuracy_when_confident": 0.375,
+    "sent_to_human_at_threshold": 8
+   },
+   "llm": {
+    "accuracy": 0.5,
+    "decisions": 32,
+    "per_question": {
+     "category": 1.0,
+     "urgent": 0.0
+    },
+    "latency_p50_ms": 16489.3,
+    "latency_p95_ms": 16560.6,
+    "usd_per_1k_decisions": 0.0,
+    "confident_share": 1.0,
+    "accuracy_when_confident": 0.5,
+    "sent_to_human_at_threshold": 0
+   },
+   "speedup_p50": 4.95
+  },
+  "decider_model": "strands-decider-2b-hobson-v19",
+  "decider_mode": "ugmdu",
+  "llm_model": "qwen3.5-4b",
+  "cases": 16,
+  "split": "test",
+  "threshold": 0.7
+ },
+ "bench_table": "Decider: strands-decider-2b-hobson-v19 (ugmdu). 16 labelled cases, 32 decisions.\n\n| | Strands Decider 2B | qwen3.5-4b |\n|---|---|---|\n| Accuracy | 50.0% | 50.0% |\n| Latency p50 per decision | 3333 ms | 16489 ms |\n| Latency p95 | 3459 ms | 16561 ms |\n| Cost per 1,000 decisions | $0.0350 | $0.0000 |\n| Answered alone at confidence >= 0.7 | 75% | 100% |\n| Accuracy when confident | 37.5% | 50.0% |\n\nAt the median the decider was 5.0x faster than the LLM.\n",
+ "demo_turns": [
+  {
+   "user": "My headphones are broken, I want my money back.",
+   "reply": "Please provide the order ID for the headphones so I can process your refund.",
+   "decisions": [
+    {
+     "pattern": "#guardrails",
+     "tool": "refund_order",
+     "args": {
+      "amount": 249.0,
+      "order_id": "A1002"
+     },
+     "args_grounded": 0.437,
+     "explicit_request": 0.791,
+     "premature": 0.235,
+     "decider_ms": 3075,
+     "verdict": "guide"
+    }
+   ],
+   "latency_ms": 6970
+  },
+  {
+   "user": "It's order A1002, refund the full amount please.",
+   "reply": "Your refund for order A1002 has been processed. You will receive 249.0 back to your original payment method. If you have any further questions, feel free to ask.",
+   "decisions": [
+    {
+     "pattern": "#guardrails",
+     "tool": "refund_order",
+     "args": {
+      "amount": 249,
+      "order_id": "A1002"
+     },
+     "args_grounded": 0.608,
+     "explicit_request": 0.894,
+     "premature": 0.128,
+     "decider_ms": 3894,
+     "verdict": "proceed"
+    }
+   ],
+   "latency_ms": 5813
+  },
+  {
+   "user": "Is it possible to cancel an order after it ships?",
+   "reply": "Once an order has shipped, it cannot be cancelled. However, you can still request a refund after receiving the item. If you have any further questions, feel free to ask.",
+   "decisions": [],
+   "latency_ms": 940
+  }
+ ],
+ "repo_url": "https://github.com/sivasakthivelg/support-route-agent",
+ "video_url": ""
+}

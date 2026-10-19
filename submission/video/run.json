@@ -1,75 +1,50 @@
 [
  {
-  "start": 1.8564388751983643,
-  "end": 18.861212015151978,
+  "start": 2.0815505981445312,
+  "end": 14.703357934951782,
   "out": {
-   "reply": "Please provide the order ID for the headphones so I can process your refund.",
-   "decisions": [
-    {
-     "pattern": "#guardrails",
-     "tool": "refund_order",
-     "args": {
-      "amount": 249.0,
-      "order_id": "A1002"
-     },
-     "args_grounded": 0.437,
-     "explicit_request": 0.791,
-     "premature": 0.235,
-     "decider_ms": 3075,
-     "verdict": "guide"
-    }
-   ],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 6970,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
-  },
-  "say": "My headphones are broken, I want my money back.",
-  "narrate": "The customer wants a refund but never says which order."
- },
- {
-  "start": 18.861226797103882,
-  "end": 28.287545919418335,
-  "out": {
-   "reply": "Your refund for order A1002 has been processed. You will receive 249.0 back to your original payment method. If you have any further questions, feel free to ask.",
-   "decisions": [
-    {
-     "pattern": "#guardrails",
-     "tool": "refund_order",
-     "args": {
-      "amount": 249,
-      "order_id": "A1002"
-     },
-     "args_grounded": 0.608,
-     "explicit_request": 0.894,
-     "premature": 0.128,
-     "decider_ms": 3894,
-     "verdict": "proceed"
-    }
-   ],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 5813,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
-  },
-  "say": "It's order A1002, refund the full amount please.",
-  "narrate": "Now the customer gives the order id and asks for the refund explicitly."
- },
- {
-  "start": 28.287585020065308,
-  "end": 32.838441133499146,
-  "out": {
-   "reply": "Once an order has shipped, it cannot be cancelled. However, you can still request a refund after receiving the item. If you have any further questions, feel free to ask.",
+   "reply": "Hello! I see your message about being charged twice this month. To ensure I get this resolved for you as quickly as possible, could you please provide a bit more detail? For instance, when did you notice the second charge, and what was the exact amount charged?\n",
    "decisions": [],
-   "model_id": "us.amazon.nova-pro-v1:0",
-   "latency_ms": 940,
-   "agent": "Kit example: store support agent",
-   "eager": true,
-   "served_by": "Amazon Bedrock AgentCore Runtime"
+   "model_id": "unknown",
+   "latency_ms": 8660
   },
-  "say": "Is it possible to cancel an order after it ships?",
-  "narrate": "This one is a question, not a request to act."
+  "say": "I was charged twice for my subscription this month.",
+  "narrate": "A billing message. Watch how the decider classifies the category and the agent creates a ticket for the Billing team.\n"
+ },
+ {
+  "start": 14.703357934951782,
+  "end": 28.521649837493896,
+  "out": {
+   "reply": "Your issue regarding the app crashing when opening the dashboard has been routed to our Technical Support team. Your ticket reference is TKT-A2P61B, and we expect a response within 2 hours. Rest assured, we're working on resolving this for you right away!\n",
+   "decisions": [],
+   "model_id": "unknown",
+   "latency_ms": 8576
+  },
+  "say": "The app crashes every time I try to open the dashboard. It has been like this for two days.",
+  "narrate": "A technical issue. The decider picks technical support and the agent routes to the Technical Support team.\n"
+ },
+ {
+  "start": 28.521649837493896,
+  "end": 46.052502393722534,
+  "out": {
+   "reply": "I\u2019ve escalated your case to our Management team regarding the unaddressed issue and your frustration over the wait. Your ticket reference is TKT-E8X92W. Since this has been flagged as high-priority, we are handling it immediately and will contact you right away. I sincerely apologize for the delay and am committed to resolving this for you promptly.\n",
+   "decisions": [],
+   "model_id": "unknown",
+   "latency_ms": 10594
+  },
+  "say": "This is absolutely unacceptable! I have been waiting for three days and no one has helped me. I want to speak to a manager immediately!",
+  "narrate": "An escalation. The decider detects both the escalation category and the urgent flag. The agent creates a critical-priority ticket for Senior Support.\n"
+ },
+ {
+  "start": 46.052502393722534,
+  "end": 61.15794396400452,
+  "out": {
+   "reply": "Your general inquiries about confusing account or billing issues have been passed to our Customer Success team. Your case reference number is TKT-K2WE3A, and you can expect a response within 24 hours. We're here to help you figure this out\u2014look out for an update soon!\n",
+   "decisions": [],
+   "model_id": "unknown",
+   "latency_ms": 9418
+  },
+  "say": "I am not really sure what is going on, something just feels off with my account or maybe the billing?",
+  "narrate": "A low-confidence case. The decider is uncertain, so the agent asks the customer to clarify rather than misrouting.\n"
  }
 ]
